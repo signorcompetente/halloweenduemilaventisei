@@ -139,7 +139,7 @@ footer{padding:2rem 0 3rem;color:var(--osso-dim);font-size:1.05rem}
     </svg>
     <div>
       <h1>Notte di Halloween</h1>
-      <p class="sub">Aperitivo, pizza, zucche da intagliare, giochi da tavola e Magic. Vieni in costume, o anche no.</p>
+      <p class="sub">Pizza, zucche da intagliare, giochi da tavola e Magic. Vieni in costume, o anche no.</p>
       <p class="quando" id="quando"></p>
     </div>
 
@@ -179,24 +179,26 @@ footer{padding:2rem 0 3rem;color:var(--osso-dim);font-size:1.05rem}
 
   <dl class="dettagli">
     <div><dt>Quando</dt><dd id="d-quando"></dd></div>
-    <div><dt>Dove</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Via+Pagno+9" target="_blank" rel="noopener">Via Pagno 9</a></dd></div>
-    <div><dt>Si mangia</dt><dd>Pizza</dd></div>
+    <div><dt>Dove</dt><dd>Casa di Sabrina e Andrea (<a href="https://www.google.com/maps/search/?api=1&query=Via+Pagno+9" target="_blank" rel="noopener">Via Pagno 9</a>)</dd></div>
+    <div><dt>Il banchetto</dt><dd>Pizze, caramelle e biscotti</dd></div>
   </dl>
+
 
   <section class="blocco" aria-labelledby="t-programma">
     <h2 id="t-programma">La serata</h2>
     <ol class="programma">
       <li>
-        <span class="ora" id="ora-inizio"></span>
-        Arrivo e aperitivo
+        <span class="ora">18:00</span>
+        Contest di intaglio
+        <span class="nota">Iniziamo presto!</span>
       </li>
       <li>
-        <span class="ora">Pizza</span>
-        Ordiniamo insieme.
+        <span class="ora">20:30</span>
+        Pizze dal Kebbabro
       </li>
       <li>
-        <span class="ora">Poi si gioca</span>
-        Contest di intaglio delle zucche, giochi da tavola e Magic per chi vuole.
+        <span class="ora">A seguire</span>
+        Biscotti e giochi
       </li>
     </ol>
   </section>
@@ -204,7 +206,8 @@ footer{padding:2rem 0 3rem;color:var(--osso-dim);font-size:1.05rem}
   <section class="blocco" aria-labelledby="t-intaglio">
     <h2 id="t-intaglio">Contest di intaglio</h2>
     <div>
-      <p>Ognuno intaglia la sua zucca e alla fine si elegge la migliore.</p>
+      <p>Ogni squadra prepara la sua zucca e alla fine si elegge la migliore.</p>
+      <p>Con la polpa facciamo i biscotti!</p>
     </div>
   </section>
 
@@ -233,14 +236,13 @@ footer{padding:2rem 0 3rem;color:var(--osso-dim);font-size:1.05rem}
 /* ===== MODIFICA QUI ===== */
 const FESTA = {
   data: "Sabato 31 ottobre",   // data della festa
-  inizio: "18:30",
+  inizio: "18:00",
   contatto: "Per conferme, domande e formati di Magic scrivimi in chat."
 };
 /* ======================== */
 
 document.getElementById('quando').textContent = FESTA.data + ", dalle " + FESTA.inizio;
 document.getElementById('d-quando').textContent = FESTA.data + ", " + FESTA.inizio;
-document.getElementById('ora-inizio').textContent = FESTA.inizio;
 document.getElementById('contatto').textContent = FESTA.contatto;
 </script>
 </body>
