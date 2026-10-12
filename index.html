@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notte di Halloween – Sei invitato</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pirata+One&family=Alegreya+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --notte:#150c1e;
+  --notte-2:#2a1a3a;
+  --osso:#f1e8d6;
+  --zucca:#ff7a1a;
+  --cera:#ffc857;
+  --osso-dim:#b9aec0;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(ellipse 60rem 40rem at 85% -5%, rgba(255,122,26,.28), transparent 70%),
+    radial-gradient(ellipse 40rem 30rem at 0% 100%, rgba(120,60,160,.22), transparent 70%),
+    var(--notte);
+  background-attachment:fixed;
+  color:var(--osso);
+  font-family:'Alegreya Sans',system-ui,sans-serif;
+  font-size:1.18rem;
+  line-height:1.55;
+  min-height:100vh;
+}
+a{color:var(--cera)}
+:focus-visible{outline:3px solid var(--cera);outline-offset:3px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.5rem}
+
+/* HERO */
+.hero{
+  display:grid;
+  grid-template-columns:1.15fr 1fr;
+  gap:2rem;
+  align-items:center;
+  padding:4.5rem 0 3.5rem;
+  position:relative;
+}
+.hero h1{
+  font-family:'Pirata One',Georgia,serif;
+  font-weight:400;
+  font-size:clamp(3.6rem,10vw,7.4rem);
+  line-height:.92;
+  color:var(--osso);
+  text-shadow:0 0 40px rgba(255,160,50,.35);
+}
+.hero p.sub{margin-top:1.4rem;font-size:1.35rem;color:var(--osso-dim);max-width:27rem}
+.hero .quando{margin-top:1.75rem;font-weight:700;font-size:1.45rem;color:var(--cera)}
+.zucca{width:100%;max-width:24rem;justify-self:center;overflow:visible;filter:drop-shadow(0 0 60px rgba(255,140,30,.45))}
+.glow{animation:flicker 4s infinite}
+@keyframes flicker{
+  0%,100%{opacity:1}
+  8%{opacity:.82}
+  12%{opacity:1}
+  47%{opacity:.9}
+  52%{opacity:1}
+  78%{opacity:.85}
+  81%{opacity:1}
+}
+.pipistrelli{position:absolute;top:1.2rem;left:0;width:100%;height:6rem;pointer-events:none;opacity:.55}
+
+/* DETTAGLI */
+.dettagli{
+  display:grid;
+  grid-template-columns:1fr 1.3fr 1fr;
+  gap:1.5rem;
+  padding:2rem 0;
+  border-top:1px solid var(--notte-2);
+  border-bottom:1px solid var(--notte-2);
+}
+.dettagli dt{color:var(--osso-dim);font-size:1rem}
+.dettagli dd{font-size:1.45rem;font-weight:500}
+
+/* SEZIONI */
+.blocco{
+  display:grid;
+  grid-template-columns:14rem 1fr;
+  gap:2rem;
+  padding:3rem 0;
+  border-bottom:1px solid var(--notte-2);
+}
+h2{
+  font-family:'Pirata One',Georgia,serif;
+  font-weight:400;
+  font-size:2.5rem;
+  line-height:1;
+  color:var(--zucca);
+}
+.blocco p{max-width:34rem}
+.blocco p + p{margin-top:.9rem}
+.programma{list-style:none;border-left:2px solid var(--zucca);padding-left:1.5rem;max-width:34rem}
+.programma li{position:relative;padding-bottom:1.4rem}
+.programma li:last-child{padding-bottom:0}
+.programma li::before{
+  content:"";position:absolute;left:calc(-1.5rem - 7px);top:.55rem;
+  width:12px;height:12px;border-radius:50%;background:var(--zucca);
+  box-shadow:0 0 12px var(--zucca);
+}
+.programma .ora{font-weight:700;color:var(--cera);font-size:1.25rem;display:block}
+.programma .nota{display:block;color:var(--osso-dim);font-size:1.05rem}
+.avviso{padding-left:1rem;border-left:3px solid var(--cera)}
+.dormire{
+  background:linear-gradient(90deg,rgba(255,200,87,.12),transparent);
+  border-left:3px solid var(--cera);
+  padding:1.25rem 1.5rem;
+  max-width:34rem;
+}
+footer{padding:2rem 0 3rem;color:var(--osso-dim);font-size:1.05rem}
+
+@media (max-width:720px){
+  .hero{grid-template-columns:1fr;padding-top:3rem}
+  .zucca{max-width:15rem;order:-1;justify-self:start}
+  .dettagli{grid-template-columns:1fr;gap:1rem}
+  .blocco{grid-template-columns:1fr;gap:1rem}
+}
+@media (prefers-reduced-motion:reduce){
+  .glow{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<main class="wrap">
+
+  <header class="hero">
+    <svg class="pipistrelli" viewBox="0 0 600 60" preserveAspectRatio="none" aria-hidden="true">
+      <g fill="#07030b">
+        <path d="M40 30 q10 -18 22 -4 q4 -8 8 0 q12 -14 22 4 q-14 -4 -22 6 q-8 -10 -30 -6z" transform="translate(0,6)"/>
+        <path d="M300 18 q8 -14 17 -3 q3 -6 6 0 q9 -11 17 3 q-11 -3 -17 5 q-6 -8 -23 -5z" transform="translate(0,4)"/>
+        <path d="M470 34 q7 -12 15 -2 q3 -5 5 0 q8 -10 15 2 q-10 -3 -15 4 q-5 -7 -20 -4z"/>
+      </g>
+    </svg>
+    <div>
+      <h1>Notte di Halloween</h1>
+      <p class="sub">Aperitivo, pizza, zucche da intagliare, giochi da tavola e Magic. Vieni in costume, o anche no.</p>
+      <p class="quando" id="quando"></p>
+    </div>
+
+    <svg class="zucca" viewBox="0 0 240 230" role="img" aria-label="Zucca di Halloween intagliata e illuminata">
+      <defs>
+        <filter id="blur" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="6"/>
+        </filter>
+        <radialGradient id="corpo" cx="50%" cy="45%" r="60%">
+          <stop offset="0" stop-color="#ff9a3c"/>
+          <stop offset="1" stop-color="#e05a00"/>
+        </radialGradient>
+      </defs>
+      <ellipse cx="120" cy="215" rx="80" ry="8" fill="#000" opacity=".35"/>
+      <ellipse cx="72" cy="125" rx="52" ry="82" fill="#d44f00"/>
+      <ellipse cx="168" cy="125" rx="52" ry="82" fill="#d44f00"/>
+      <ellipse cx="96" cy="125" rx="56" ry="86" fill="#e8660a"/>
+      <ellipse cx="144" cy="125" rx="56" ry="86" fill="#e8660a"/>
+      <ellipse cx="120" cy="125" rx="52" ry="88" fill="url(#corpo)"/>
+      <path d="M112 40 C110 22 120 12 134 8 C130 18 130 28 128 40 Z" fill="#5b7a2b"/>
+      <g class="glow">
+        <g filter="url(#blur)" fill="#ffc857" opacity=".9">
+          <path d="M72 100 L102 112 L76 132 Z"/>
+          <path d="M168 100 L138 112 L164 132 Z"/>
+          <path d="M120 128 L131 148 L109 148 Z"/>
+          <path d="M70 160 L84 172 L96 162 L108 176 L120 164 L132 176 L144 162 L156 172 L170 160 L164 186 L146 194 L120 198 L94 194 L76 186 Z"/>
+        </g>
+        <g fill="#ffe08a">
+          <path d="M72 100 L102 112 L76 132 Z"/>
+          <path d="M168 100 L138 112 L164 132 Z"/>
+          <path d="M120 128 L131 148 L109 148 Z"/>
+          <path d="M70 160 L84 172 L96 162 L108 176 L120 164 L132 176 L144 162 L156 172 L170 160 L164 186 L146 194 L120 198 L94 194 L76 186 Z"/>
+        </g>
+      </g>
+    </svg>
+  </header>
+
+  <dl class="dettagli">
+    <div><dt>Quando</dt><dd id="d-quando"></dd></div>
+    <div><dt>Dove</dt><dd><a href="https://www.google.com/maps/search/?api=1&query=Via+Pagno+9" target="_blank" rel="noopener">Via Pagno 9</a></dd></div>
+    <div><dt>Si mangia</dt><dd>Pizza</dd></div>
+  </dl>
+
+  <section class="blocco" aria-labelledby="t-programma">
+    <h2 id="t-programma">La serata</h2>
+    <ol class="programma">
+      <li>
+        <span class="ora" id="ora-inizio"></span>
+        Arrivo e aperitivo
+      </li>
+      <li>
+        <span class="ora">Pizza</span>
+        Ordiniamo insieme.
+      </li>
+      <li>
+        <span class="ora">Poi si gioca</span>
+        Contest di intaglio delle zucche, giochi da tavola e Magic per chi vuole.
+      </li>
+    </ol>
+  </section>
+
+  <section class="blocco" aria-labelledby="t-intaglio">
+    <h2 id="t-intaglio">Contest di intaglio</h2>
+    <div>
+      <p>Ognuno intaglia la sua zucca e alla fine si elegge la migliore.</p>
+    </div>
+  </section>
+
+  <section class="blocco" aria-labelledby="t-giochi">
+    <h2 id="t-giochi">Giochi e Magic</h2>
+    <div>
+      <p>Giochi da tavola per chi ha voglia di sfidarsi, e partite a Magic nel formato Standard.</p>
+      <p class="avviso">Se giochi un altro formato, dimmelo: ho poche carte e devo organizzarmi.</p>
+    </div>
+  </section>
+
+  <section class="blocco" aria-labelledby="t-dormire">
+    <h2 id="t-dormire">Fermarsi a dormire</h2>
+    <div>
+      <p class="dormire">Ci sono due divani letto. Se si fa tardi, puoi restare a dormire: avvisami così so quanti siamo.</p>
+    </div>
+  </section>
+
+  <footer>
+    <p id="contatto"></p>
+  </footer>
+
+</main>
+
+<script>
+/* ===== MODIFICA QUI ===== */
+const FESTA = {
+  data: "Sabato 31 ottobre",   // data della festa
+  inizio: "18:30",
+  contatto: "Per conferme, domande e formati di Magic scrivimi in chat."
+};
+/* ======================== */
+
+document.getElementById('quando').textContent = FESTA.data + ", dalle " + FESTA.inizio;
+document.getElementById('d-quando').textContent = FESTA.data + ", " + FESTA.inizio;
+document.getElementById('ora-inizio').textContent = FESTA.inizio;
+document.getElementById('contatto').textContent = FESTA.contatto;
+</script>
+</body>
+</html>
